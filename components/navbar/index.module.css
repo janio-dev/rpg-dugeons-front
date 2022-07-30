@@ -1,0 +1,122 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 32px 64px;
+}
+
+.menuMobile{
+    display: none;
+}
+
+.ContainerbuttonMenu{
+    display: none;
+}
+
+.menu ul{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+}
+
+.menu ul li{
+    color: white;
+    padding: 0px 16px;
+    font-size: 16px;
+    font-family: OpenSans-Bold;
+    list-style: none;
+}
+
+
+/*smartphone*/
+@media only screen and (max-width: 900px) {
+    .menu{
+        display: none;
+    }
+    .menuMobile{
+        display: flex;
+        top: 120px;
+        flex-direction: column;
+        height: 30vh;
+        width: 100%;
+        position: absolute;
+        transition: all 0.5s ease;
+        opacity: 0;
+        left: -100%;
+        background-image: url(../../img/background-div.png);
+    }
+
+    .menuMobile.ativo{
+        left: 0;
+        opacity: 1;
+    }
+
+    .menuMobile ul{
+        padding: 0px 0px;
+    }
+
+    .menuMobile ul li{
+        padding: 16px;
+        width: 100%;
+        border-bottom: 1px solid white;
+        color: white;
+    }
+
+    .ContainerbuttonMenu{
+        width: 40px;
+        cursor: pointer;
+        height: 40px;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .ContainerbuttonMenu button{
+        display: block;
+        width: 30px;
+        height: 4px;
+        background-color: white;
+        position: absolute;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .ContainerbuttonMenu button:nth-child(1){
+        margin-bottom: 20px;
+    }
+    .ContainerbuttonMenu button:nth-child(3){
+        margin-top: 20px;
+    }
+
+    /*animção*/
+    .ContainerbuttonMenu.ativo button:nth-child(1){
+        margin-bottom: 0;
+        transform: rotate(-45deg);
+    }
+    .ContainerbuttonMenu.ativo button:nth-child(2){
+        opacity: 0;
+    }
+    .ContainerbuttonMenu.ativo button:nth-child(3){
+        margin-top: 0;
+        transform: rotate(45deg);
+    }
+    /*end animation*/
+
+    .menuMobile ul{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .header{
+        padding: 32px 16px;
+    }
+}
