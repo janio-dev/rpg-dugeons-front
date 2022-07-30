@@ -1,25 +1,16 @@
-@font-face {
-    font-family: OpenSans-Regular;
-    src: url(../../fonts/OpenSans-Regular.ttf);
-}
-
-@font-face {
-    font-family: OpenSans-Bold;
-    src: url(../../fonts/OpenSans-Bold.ttf);
-}
-
-
 .header{
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     padding: 32px 64px;
-    z-index: 4;
-    position: absolute;
 }
 
 .menuMobile{
+    display: none;
+}
+
+.ContainerbuttonMenu{
     display: none;
 }
 
@@ -34,33 +25,9 @@
 .menu ul li{
     color: white;
     padding: 0px 16px;
-    font-size: 14px;
-    font-family: OpenSans-Regular;
-}
-
-.login{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 25%;
-}
-
-.login p{
-    padding-right: 8px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-}
-
-.login button{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    font-weight: bold;
-    min-width: 100px;
-    min-height: 50px;
-    border-radius: 10px;
-    background-color: #E8253E;
-    color: white;
-    box-shadow: 2px 2px 10px 0px #3f3a3a;
+    font-size: 16px;
+    font-family: OpenSans-Bold;
+    list-style: none;
 }
 
 
@@ -69,21 +36,17 @@
     .menu{
         display: none;
     }
-
-    .login{
-        display: none;
-    }
     .menuMobile{
         display: flex;
-        top: 100px;
+        top: 120px;
         flex-direction: column;
-        height: 85vh;
+        height: 30vh;
         width: 100%;
         position: absolute;
         transition: all 0.5s ease;
         opacity: 0;
         left: -100%;
-        background-image: linear-gradient(to right, #3f3a3a, #E8253E);
+        background-image: url(../../img/background-div.png);
     }
 
     .menuMobile.ativo{
@@ -122,6 +85,7 @@
         position: absolute;
         border-radius: 10px;
         transition: all 0.3s ease;
+        cursor: pointer;
     }
 
     .ContainerbuttonMenu button:nth-child(1){
